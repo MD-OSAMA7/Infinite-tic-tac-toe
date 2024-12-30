@@ -1,0 +1,641 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "sans-serif";
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+background: url(gradient-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  /* position: relative; */
+}
+
+.msg-container{
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 0.3rem 3rem;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: darkturquoise;
+  box-shadow: 1px 2px 6px 6px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  
+  background-color: transparent;
+  
+  backdrop-filter: blur(5px);
+}
+.msg-container2{
+    
+    
+    position: absolute;
+    top: 22.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: darkgreen;
+  pointer-events: none;
+  background-color: transparent;
+  z-index: 1;
+  opacity: 0;
+  font-style: oblique;
+  font-weight: bolder;
+  height:20%;
+  width:80%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#msg2{
+  height:100%;
+  width:100%;
+  background-color: transparent;
+  text-decoration: darkturquoise;
+  font-size: 5.5rem;
+  
+}
+.msg-container2.active{
+    opacity: 1;
+    
+}
+
+.game {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  max-width: 25rem;
+  max-height: 25rem;
+  
+  
+  aspect-ratio: 1/1;
+  
+  background-color: transparent;
+  border:none;
+ 
+  
+  
+}
+
+.box{
+    color: aqua;
+    /* position: relative; */
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    cursor: none;
+    font-size: 0rem;
+    width: 100%;
+    transition: all 150ms ease-in-out;
+  background-color: transparent;
+  border:none;
+  box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2.5px);
+  
+  
+  
+  
+  
+}
+.box7{
+  border-bottom-left-radius: 15%;
+}
+.box1{
+  border-top-left-radius: 15%;
+}
+.box9{
+  border-bottom-right-radius: 15%;
+}
+.box3{
+  
+  border-top-right-radius: 15%;
+}
+
+.box1,.box2,.box5,.box4{
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+  border-color: aqua;
+  
+}
+
+.box3,.box6{
+    border-bottom: 2px solid #fff;
+  border-color: aqua;
+}
+
+.box7,.box8{
+    border-right: 2px solid #fff;
+  border-color: aqua;
+}
+
+#reset-btn{
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: darkturquoise;
+    padding: 0.5rem 2rem;
+    border-radius:1rem;
+    cursor: pointer;
+    backdrop-filter: blur(7px);
+    transition: all 150ms ease-in-out;
+    background-color: transparent;
+  box-shadow: 1px 2px 6px 6px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  cursor: none;
+}
+
+
+#reset-btn:active{
+  color:white;
+  
+  font-size: x-large;
+  background-color: black;
+}
+
+
+
+#msg{
+  
+  font-size: x-large;
+  
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
+.animateCircle{
+  animation: animateCircle 5s linear infinite;
+}
+
+@keyframes animateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+    50%{
+    transform: rotate(180deg);
+  }
+    100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.winner1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 8px solid cyan;
+  display: none;
+}
+button.w1 .winner1 {
+  display: block;
+}
+
+
+.winner2 {
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.winner2::before,
+.winner2::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -12px;
+  border:6.3px dashed cyan;
+  background-color: ;
+  border-radius: 100%;
+  color: 
+}
+
+.winner2::before {
+  width: 11px;
+  height: 76px;
+  transform: translate(0%, -50%);
+  
+}
+
+.winner2::after {
+  width: 76px;
+  height: 11px;
+  transform: translate( -41%, -50%);
+  
+}
+
+button.w2 .winner2 {
+  display: block;
+}
+
+
+.circle {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 9px dotted ;
+  display: none;
+  
+  border-top-color: cyan;
+border-right-color: darkcyan;
+border-bottom-color: cyan;
+border-left-color: darkcyan;
+  
+}
+
+button.o .circle {
+  display: block;
+}
+
+.circle1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 8px solid;
+  display: none;
+  
+  
+  border-top-color: darkred;
+border-right-color: red;
+border-bottom-color: darkred;
+border-left-color: red;
+
+  color: 
+  
+}
+
+button.O .circle1 {
+  display: block;
+}
+
+.circle2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 8px solid;
+  display: none;
+  border-top-color: darkred;
+border-right-color: red;
+border-bottom-color: darkred;
+border-left-color: red;
+  
+}
+
+button.S .circle2 {
+  display: block;
+}
+
+
+
+
+
+
+.cross1 {
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.cross1::before,
+.cross1::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -12px;
+  border: 6.3px dashed;
+  background-color: transparent;
+  border-radius: 100%;
+  
+  border-top-color: darkblue;
+border-right-color: blue;
+border-bottom-color: darkblue;
+border-left-color: blue;
+  
+}
+
+.cross1::before {
+  width: 11px;
+  height: 76px;
+  transform: translate(0%, -50%);
+  
+}
+
+.cross1::after {
+  width: 76px;
+  height: 11px;
+  transform: translate( -41%, -50%);
+  
+}
+
+button.X .cross1 {
+  display: block;
+}
+
+
+
+
+.cross2 {
+  position: absolute;
+  
+  transform: rotate(45deg);
+}
+
+.cross2::before,
+.cross2::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -12px;
+  
+  border: 6.3px dashed;
+  background-color: transparent;
+  border-radius: 100%;
+  
+  border-top-color: cyan;
+border-right-color: darkcyan;
+border-bottom-color: cyan;
+border-left-color: darkcyan;
+  
+  
+}
+
+.cross2::before {
+  width: 11px;
+  height: 76px;
+  transform: translate(0%, -50%);
+  
+}
+
+.cross2::after {
+  width: 76px;
+  height: 11px;
+  transform: translate( -41%, -50%);
+  
+}
+
+button.x .cross2 {
+  display: block;
+}
+
+
+
+
+
+header {
+  background-color: darkcyan;
+  z-index: 1;
+ 	height: 5.5vh;
+  width: 100vw;
+	max-height: 8vh;
+  position: fixed;
+	display: absolute;
+  
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+  top:0;
+}
+#icon-container{
+  width: 75%;
+	height: 100%;
+	background-color: transparent;
+  position: absolute;
+  margin-left:12%;
+  overflow: auto;
+  display:flex;
+}
+
+
+#icon{
+	width: 100%;
+	height: 100%;
+  display: flex;
+  position: relative;
+	background-color: transparent;
+  overflow: hidden;
+   color:black;
+   align-items: center;
+   justify-content: center;
+   
+	font-style: oblique;
+  font-weight: bolder;
+  font-size: 180%;
+  
+   
+}
+#icon1{
+	width: 10%;
+	height: 100%;
+	background-color: transparent;
+  position: absolute;
+  overflow: auto;
+  right:90%;
+   
+}
+.nav{
+   position: absolute;
+	width: 12rem;
+	height: 20rem;
+	border-radius: 1rem;
+	background-color: transparent;
+	display: grid;
+	margin: 3rem 0px 0px 14rem	;
+	grid-template-columns: repeat(1, 1fr);
+	box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  position: absolute;
+  pointer-events:  none ;
+  opacity: 0;
+   right:0;
+   top:0;
+}
+.nav.active{
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.navlist{
+	color: black;
+	text-align: center;
+	font-style: oblique;
+  font-weight: bolder;
+	border-radius: 3rem;
+	font-size: x-large;
+	background-color:lightseagreen;
+	margin:10px 10px 10px 10px;
+	box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  cursor: none;
+  
+}
+
+
+.navlist:active{
+  background-color: transparent;
+  font-size: 200%;
+   color: lightseagreen;
+}
+#nav-btn{
+  position: absolute;
+  background-color: darkcyan;
+  width:15%;
+  height:80%;
+  
+   z-index: 1;
+  margin-top:1%;
+    border-radius: 20px;
+  cursor: none;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+   border:none;
+   display: flex;
+   
+   right:0;
+}
+#nav-btn.active{
+   pointer-events: none;
+   opacity: 0;
+}
+
+#nav-btn1{
+  position: absolute;
+  background-color: transparent;
+  width:15%;
+  height:80%;
+   right:0;
+   z-index: 1;
+  margin-top:1%;
+    border-radius: 20px;
+  cursor: none;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+   border:none;
+   display: flex;
+   pointer-events: none;
+   opacity: 0;
+   
+}
+
+#nav-btn1.active{
+   pointer-events: auto;
+   opacity: 1;
+}
+
+#btn{
+  height:100%;
+  width:100%;
+  color: black;
+  
+}
+
+#btn-1{
+  height:100%;
+  width:100%;
+  color: black;
+}
+#nav-btn1:active{
+   height:85%;
+  width:16%;
+  
+}
+#nav-btn:active{
+   height:85%;
+  width: 16%;
+  
+}
+#btn-1:active{
+   
+  color: whitesmoke;
+}
+#btn:active{
+  color: whitesmoke;
+}
+
+
+@media (max-width: 1024px) and (orientation: landscape){
+	.nav{
+		margin: 2.6rem 0px 0px 40.2rem;
+	}
+   header{
+      height: 10vh;
+      max-height: 10vh;
+   }
+   
+   #icon1{
+      margin-right: 1.5%;
+   }
+   #nav-btn{
+      width:7%;
+      bottom:10%;
+      left: 92%;
+      
+   }
+   #nav-btn1{
+      width:7%;
+      bottom:10%;
+      left: 92%;
+      
+   }
+ 
+}
